@@ -18,7 +18,6 @@ jobs :
       - name: Lint code
         run: npm run lint
 
-jobs : 
   test_job:
     runs-on: ubuntu-latest
     steps:
@@ -32,6 +31,6 @@ jobs :
 
       - name: Install dependencies
         run: npm install
-        
+
       - name: Run tests
         run: npm test
