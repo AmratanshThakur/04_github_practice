@@ -18,8 +18,36 @@ jobs :
       - name: Lint code
         run: npm run lint
 
-      - name: Run tests
+  test_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: test code
         run: npm test
 
-      - name: Build project
-        run: npm run build
+    deploy_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Deploy code
+        run: npm run deploy
