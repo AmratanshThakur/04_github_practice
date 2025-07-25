@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check issue metadata
-        run: echo "Issue opened with title: ${{ github.event.issue.title }}"
+        run: echo "${{ github.event.issue.title }}"
