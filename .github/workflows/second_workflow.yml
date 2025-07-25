@@ -1,0 +1,10 @@
+name : Second Workflow
+on:
+  issues:
+    types: [opened]
+jobs:
+  issue_job: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check issue metadata
+        run: echo "Issue opened with title: ${{ github.event.issue.title }}"
