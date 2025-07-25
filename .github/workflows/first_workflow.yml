@@ -54,4 +54,4 @@ jobs :
       - name: Build code
         run: npm run build
       - name: Notify success
-        echo: "Build completed successfully"
+        run: echo "Build completed successfully"
